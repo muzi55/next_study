@@ -1,7 +1,9 @@
+import SearchBar from "./SearchBar";
+
 export default function SearchLayout({ children }: { children: React.ReactNode }) {
   return (
     <div>
-      <div>임시 서치바</div>
+      <SearchBar />
       {children}
     </div>
   );
