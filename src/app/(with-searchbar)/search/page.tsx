@@ -1,3 +1,5 @@
+import ClientComponent from "@/app/components/ClientComponent";
+
 export default function Search({
   searchParams,
 }: {
