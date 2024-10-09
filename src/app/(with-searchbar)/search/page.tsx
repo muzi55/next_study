@@ -1,12 +1,18 @@
-import ClientComponent from "@/app/components/ClientComponent";
+import books from "@/mock/books.json";
+import BookItem from "@/components/book-item";
 
-export default function Search({
+export default function Page({
   searchParams,
 }: {
   searchParams: {
     q?: string;
   };
 }) {
-  console.log("searchParams", searchParams);
-  return <div>search 페이지 [{searchParams.q}]</div>;
+  return (
+    <div>
+      {books.map((book) => (
+        <BookItem key={book.id} {...book} />
+      ))}
+    </div>
+  );
 }
