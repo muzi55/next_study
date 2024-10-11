@@ -2,6 +2,7 @@ import books from "@/mock/books.json";
 import BookItem from "@/components/book-item";
 import type { BookData } from "@/types";
 
+// export const dynamic = "error";
 interface ISearchParams {
   searchParams: {
     q?: string;
