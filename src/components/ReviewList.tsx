@@ -3,7 +3,11 @@ import React from "react";
 import ReviewItem from "./ReviewItem";
 
 async function ReviewList({ bookId }: { bookId: string }) {
-  const res = await fetch(`${process.env.NEXT_PUBLIC_API_SERVER_URL}/review/book/${bookId}`);
+  const res = await fetch(`${process.env.NEXT_PUBLIC_API_SERVER_URL}/review/book/${bookId}`, {
+    next: {
+      tags: [`review-${bookId}`],
+    },
+  });
 
   if (!res.ok) {
     throw new Error(`Review Fetch failed: ${res.statusText}`);
