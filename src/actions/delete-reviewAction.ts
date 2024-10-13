@@ -1,6 +1,5 @@
 "use server";
 
-import { ActionFormData } from "@/types";
 import { revalidateTag } from "next/cache";
 
 const a = `
@@ -15,7 +14,6 @@ export const deleteReviewAction = async (_: any, formData: FormData) => {
   const reviewId = formData.get("reviewId")?.toString();
   const bookId = formData.get("bookId")?.toString();
 
-  console.log(reviewId);
   if (!reviewId)
     return {
       status: false,
