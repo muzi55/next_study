@@ -14,7 +14,7 @@ export default function Page({ params }: IBookParams) {
   return (
     <div>
       <BookDetail bookId={params.id} />
-      <BookReview />
+      <BookReview bookId={params.id} />
     </div>
   );
 }

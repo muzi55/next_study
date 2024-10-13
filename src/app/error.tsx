@@ -22,7 +22,7 @@ export default function Error({ error, reset }: { error: Error; reset: () => voi
   };
   return (
     <div>
-      <h3>검색 과정의 오류가 발생했다.</h3>
+      <h3>오류가 발생했다.</h3>
       <button onClick={() => reset()}>리셋</button>
       <button onClick={handleReload}>페이지 리셋</button>
       <button onClick={handleRouterRefresh}>라우터 리셋</button>
