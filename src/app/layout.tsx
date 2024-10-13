@@ -2,19 +2,8 @@ import "./globals.css";
 import Link from "next/link";
 import style from "./layout.module.css";
 import { BookData } from "@/types";
+import Footer from "@/components/Footer";
 
-async function Footer() {
-  const res = await fetch(`${process.env.NEXT_PUBLIC_API_SERVER_URL}/book`, { cache: "force-cache" });
-  if (!res.ok) return <footer>제작 @winterlood</footer>;
-  const books: BookData[] = await res.json();
-
-  return (
-    <footer>
-      제작 @winterlood
-      <p>{books.length}</p>
-    </footer>
-  );
-}
 export default function RootLayout({
   children,
 }: Readonly<{
