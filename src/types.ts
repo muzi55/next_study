@@ -15,3 +15,8 @@ export interface ReviewData {
   createdAt: string;
   bookId: number;
 }
+
+export interface ActionFormData {
+  formData: FormData;
+  _: any;
+}

@@ -12,7 +12,7 @@ export default function BookReview({ bookId }: { bookId: string }) {
   return (
     <section>
       <form action={formAction}>
-        <input type="text" name="bookId" value={bookId} hidden />
+        <input type="text" name="bookId" readOnly value={bookId} hidden />
         <input type="text" name="content" placeholder="리뷰 내용" required />
         <input type="text" name="author" placeholder="작성자" required />
         <button disabled={isPending} type="submit">
