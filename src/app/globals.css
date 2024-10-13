@@ -10,3 +10,9 @@ a {
   text-decoration: none;
   cursor: pointer;
 }
+
+ul,
+li,
+ol {
+  list-style: none;
+}

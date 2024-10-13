@@ -1,8 +1,10 @@
 import React from "react";
 import BookItem from "./book-item";
 import type { BookData } from "@/types";
+import { delay } from "@/util/delay";
 
 export default async function RecoBooks() {
+  await delay(3000);
   const response = await fetch(`${process.env.NEXT_PUBLIC_API_SERVER_URL}/book/random`, {
     next: {
       revalidate: 3,

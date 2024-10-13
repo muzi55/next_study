@@ -3,6 +3,8 @@ import BookItem from "@/components/book-item";
 import type { BookData } from "@/types";
 import { delay } from "@/util/delay";
 import { Suspense } from "react";
+import BookSkeleton from "@/components/skeleton/BookSkeleton";
+import BookSkeletonList from "@/components/skeleton/BookSkeletonList";
 
 async function SearchResult({ q }: { q: string }) {
   await delay(1500);
@@ -35,8 +37,14 @@ interface ISearchParams {
 
 export default function Page({ searchParams }: ISearchParams) {
   return (
-    <Suspense key={searchParams.q || ""} fallback={<p>loading ...</p>}>
-      <SearchResult q={searchParams.q || ""} />;
+    <Suspense
+      key={searchParams.q || ""}
+      fallback={
+        <>
+          <BookSkeletonList length={3} />
+        </>
+      }>
+      <SearchResult q={searchParams.q || ""} />
     </Suspense>
   );
 }
